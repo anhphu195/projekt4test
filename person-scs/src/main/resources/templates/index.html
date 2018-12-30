@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personscs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="row">
+    <div class="col-xs-6 col-sm-4" th:each="person : ${persons}" >
+        <h3 th:text="${person.name}">Name</h3>
+        <ul class="list-group">
+            <li class="list-group-item" th:text="'Jahres Lohn : ' + ${person.jahresLohn}" >Jahres Lohn</li>
+            <li class="list-group-item" th:text="'Kontakt Daten : ' + ${person.kontaktDaten}" >Kontakt Daten</li>
+            <li class="list-group-item" th:text="'Skills : ' + ${person.skills}" >Skills</li>
+            <li class="list-group-item">Vergangene Projekte :
+                <ul >
+                    <li>Projekt1...</li>
+                    <li>Projekt2...</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
